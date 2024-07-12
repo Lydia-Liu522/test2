@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>电话拨号界面</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+        .phone-container {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 400px;
+            height: 700px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            box-sizing: border-box;
+            position: relative;
+        }
+        .status-bar {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        .screen {
+            height: 50px;
+            width: 100%;
+            background: #e0e0e0;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+        }
+        .instructions {
+            text-align: center;
+            margin-bottom: 20px;
+            color: grey;
+        }
+        .instructions p {
+            margin: 5px 0;
+        }
+        .search-numbers {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: grey;
+        }
+        .search-numbers div {
+            text-align: center;
+            margin: 0 10px;
+        }
+        .search-numbers .number {
+            font-size: 24px;
+        }
+        .search-numbers .letters {
+            font-size: 14px;
+        }
+        .buttons {
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .button {
+            background: #ffffff;
+            font-size: 18px;
+            cursor: pointer;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .button span:nth-child(2) {
+            font-size: 12px; /* 调整英文字体大小 */
+        }
+        .call-button {
+            width: 60px;
+            height: 60px;
+            background: #4CAF50;
+            color: white;
+            font-size: 24px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+            cursor: pointer;
+        }
+        .footer {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            text-align: center;
+            font-size: 14px;
+            cursor: pointer;
+        }
+        .footer div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .footer img {
+            width: 24px;
+            height: 24px;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="phone-container">
+        <div class="status-bar">
+            <span>22:01</span>
+            <span>WiFi</span>
+            <span>66%</span>
+        </div>
+        <div class="instructions">
+            <p>通话</p>
+            <p>拼音9键搜索</p>
+            <p>搜索“张小欧” (Zhang Xiao Ou)，依次输入：</p>
+        </div>
+        <div class="search-numbers">
+            <div>
+                <div class="number">9</div>
+                <div class="letters">WXYZ</div>
+            </div>
+            <div>+</div>
+            <div>
+                <div class="number">9</div>
+                <div class="letters">WXYZ</div>
+            </div>
+            <div>+</div>
+            <div>
+                <div class="number">6</div>
+                <div class="letters">MNO</div>
+            </div>
+        </div>
+        <div class="screen" id="screen"></div>
+        <div class="buttons">
+            <div class="button" onclick="appendNumber('1')">
+                <span>1</span>
+                <span></span>
+            </div>
+            <div class="button" onclick="appendNumber('2')">
+                <span>2</span>
+                <span>ABC</span>
+            </div>
+            <div class="button" onclick="appendNumber('3')">
+                <span>3</span>
+                <span>DEF</span>
+            </div>
+            <div class="button" onclick="appendNumber('4')">
+                <span>4</span>
+                <span>GHI</span>
+            </div>
+            <div class="button" onclick="appendNumber('5')">
+                <span>5</span>
+                <span>JKL</span>
+            </div>
+            <div class="button" onclick="appendNumber('6')">
+                <span>6</span>
+                <span>MNO</span>
+            </div>
+            <div class="button" onclick="appendNumber('7')">
+                <span>7</span>
+                <span>PQRS</span>
+            </div>
+            <div class="button" onclick="appendNumber('8')">
+                <span>8</span>
+                <span>TUV</span>
+            </div>
+            <div class="button" onclick="appendNumber('9')">
+                <span>9</span>
+                <span>WXYZ</span>
+            </div>
+            <div class="button" onclick="appendNumber('*')">
+                <span>*</span>
+                <span></span>
+            </div>
+            <div class="button" onclick="appendNumber('0')">
+                <span>0</span>
+                <span>+</span>
+            </div>
+            <div class="button" onclick="appendNumber('#')">
+                <span>#</span>
+                <span></span>
+            </div>
+        </div>
+        <div class="call-button" onclick="makeCall()">
+            &#x260E;
+        </div>
+        <div class="footer">
+            <div>
+                <img src="./img/电话.png" alt="通话">
+                <span>通话</span>
+            </div>
+            <div>
+                <img src="./img/联系人.png" alt="联系人">
+                <span>联系人</span>
+            </div>
+            <div>
+                <img src="./img/营业厅.png" alt="营业厅">
+                <span>营业厅</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function appendNumber(number) {
+            const screen = document.getElementById('screen');
+            screen.textContent += number;
+        }
+
+        function makeCall() {
+            const screen = document.getElementById('screen');
+            alert('拨号: ' + screen.textContent);
+            screen.textContent = '';
+        }
+    </script>
+</body>
+</html>
