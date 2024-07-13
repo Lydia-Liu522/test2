@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,6 +14,7 @@
             background-color: #f0f0f0;
             margin: 0;
         }
+
         .phone-container {
             background: white;
             border-radius: 10px;
@@ -26,6 +28,7 @@
             box-sizing: border-box;
             position: relative;
         }
+
         .status-bar {
             width: 100%;
             display: flex;
@@ -34,6 +37,7 @@
             font-size: 14px;
             margin-bottom: 20px;
         }
+
         .screen {
             height: 50px;
             width: 100%;
@@ -45,14 +49,17 @@
             align-items: center;
             font-size: 24px;
         }
+
         .instructions {
             text-align: center;
             margin-bottom: 20px;
             color: grey;
         }
+
         .instructions p {
             margin: 5px 0;
         }
+
         .search-numbers {
             display: flex;
             justify-content: center;
@@ -61,16 +68,20 @@
             margin-bottom: 20px;
             color: grey;
         }
+
         .search-numbers div {
             text-align: center;
             margin: 0 10px;
         }
+
         .search-numbers .number {
             font-size: 24px;
         }
+
         .search-numbers .letters {
             font-size: 14px;
         }
+
         .buttons {
             width: 100%;
             display: grid;
@@ -78,6 +89,7 @@
             gap: 10px;
             margin-bottom: 20px;
         }
+
         .button {
             background: #ffffff;
             font-size: 18px;
@@ -88,22 +100,36 @@
             justify-content: center;
             align-items: center;
         }
+
         .button span:nth-child(2) {
             font-size: 12px;
         }
-        .call-button {
-            width: 60px;
+
+        .call-button,
+        .delete-button {
+            width: 100%;
             height: 60px;
-            background: #4CAF50;
-            color: white;
-            font-size: 24px;
-            border-radius: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-bottom: 20px;
             cursor: pointer;
+            border-radius: 10px;
+            background: #ffffff;
         }
+
+        .call-button {
+            background: #4CAF50;
+            color: white;
+            font-size: 24px;
+            grid-column: 2;
+        }
+
+        .delete-button img {
+            width: 20px;
+            height: 20px;
+            object-fit: cover;
+        }
+
         .footer {
             display: flex;
             justify-content: space-around;
@@ -111,35 +137,43 @@
             text-align: center;
             font-size: 14px;
             cursor: pointer;
-            margin-top: auto; /* 确保 footer 在底部 */
+            margin-top: auto;
         }
+
         .footer div {
             display: flex;
             flex-direction: column;
             align-items: center;
         }
+
         .footer img {
             width: 24px;
             height: 24px;
             margin-bottom: 5px;
         }
+
         .page {
             display: none;
         }
+
         .page.active {
             display: block;
         }
+
         .hidden {
             display: none;
         }
+
         .contact-container {
             width: 100%;
         }
+
         .contact-form {
             width: 100%;
             padding: 10px;
             box-sizing: border-box;
         }
+
         .contact-form input {
             width: 100%;
             padding: 10px;
@@ -148,6 +182,7 @@
             border: 1px solid #ccc;
             border-radius: 5px;
         }
+
         .contact-form .save-btn {
             width: 100%;
             padding: 10px;
@@ -158,52 +193,151 @@
             cursor: pointer;
             font-size: 18px;
         }
-        .balance-container {
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px;
-            background-color: #f0f0f0;
-            border-radius: 10px;
-            margin-bottom: 20px;
-        }
-        .balance-info {
-            text-align: center;
-        }
-        .balance-info p {
-            margin: 5px 0;
-        }
-        .balance-info span {
-            font-weight: bold;
-        }
-        .balance-actions {
-            display: flex;
-            justify-content: space-around;
-        }
-        .balance-actions .action {
-            text-align: center;
-        }
-        .balance-actions .action img {
-            width: 40px;
-            height: 40px;
-            margin-bottom: 5px;
-        }
-        .balance-actions .action span {
-            font-size: 14px;
-        }
+
         .avatar {
             width: 80px;
             height: 80px;
             border-radius: 50%;
             margin-bottom: 20px;
-            display: block; /* 确保图像以块级元素显示 */
+            display: block;
             margin-left: auto;
             margin-right: auto;
+        }
 
+        .office-container {
+            width: 90%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0 5%;
+            box-sizing: border-box;
+            margin: 0 auto;
+        }
+
+        .office-header {
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .balance-status,
+        .recharge-options,
+        .special-offer,
+        .more-services {
+            width: 150%;
+            max-width: 1200px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: #ffffff;
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            box-sizing: border-box;
+        }
+
+        .balance-status {
+            padding: 10px;
+            max-height: 120px;
+        }
+
+        .balance-status p {
+            margin: 5px 0;
+            font-size: 16px;
+        }
+
+        .balance-status span {
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .recharge-options {
+            flex-direction: row;
+            justify-content: space-between;
+            padding: 10px;
+            max-height: 120px;
+        }
+
+        .recharge-option {
+            flex: 1;
+            text-align: center;
+            padding: 10px;
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        .recharge-option img {
+            width: 35px;
+            height: 35px;
+            margin-bottom: 5px;
+        }
+
+        .recharge-option span {
+            display: block;
+            font-size: 14px;
+        }
+
+        .special-offer {
+            padding: 10px;
+            box-sizing: border-box;
+            max-height: 120px;
+        }
+
+        .special-offer p {
+            margin: 5px 0;
+            font-size: 16px;
+        }
+
+        .special-offer img {
+            width: 40px;
+            height: 40px;
+            float: right;
+        }
+
+        .more-services {
+            padding: 10px;
+            box-sizing: border-box;
+            max-height: 120px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .more-services div {
+            flex: 1;
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            border-right: 1px solid #f0f0f0;
+            cursor: pointer;
+            align-items: center;
+        }
+
+        .more-services div:last-child {
+            border-right: none;
+        }
+
+        .more-services img {
+            width: 22px;
+            height: 22px;
+            margin-right: 10px;
+        }
+
+        .more-services span {
+            font-size: 14px;
+        }
+
+        .more-services .arrow {
+            color: #ccc;
         }
     </style>
 </head>
+
 <body>
     <div class="phone-container">
         <div class="status-bar">
@@ -229,166 +363,115 @@
                 </div>
                 <div>+</div>
                 <div>
-                    <div class="number">6</div>
-                    <div class="letters">MNO</div>
+                    <div class="number">4</div>
+                    <div class="letters">GHI</div>
                 </div>
             </div>
-            <div class="screen" id="screen"></div>
+            <div id="screen" class="screen"></div>
             <div class="buttons">
-                <div class="button" onclick="appendNumber('1')">
-                    <span>1</span>
+                <div class="button" onclick="appendNumber('1')"><span>1</span><span></span></div>
+                <div class="button" onclick="appendNumber('2')"><span>2</span><span>ABC</span></div>
+                <div class="button" onclick="appendNumber('3')"><span>3</span><span>DEF</span></div>
+                <div class="button" onclick="appendNumber('4')"><span>4</span><span>GHI</span></div>
+                <div class="button" onclick="appendNumber('5')"><span>5</span><span>JKL</span></div>
+                <div class="button" onclick="appendNumber('6')"><span>6</span><span>MNO</span></div>
+                <div class="button" onclick="appendNumber('7')"><span>7</span><span>PQRS</span></div>
+                <div class="button" onclick="appendNumber('8')"><span>8</span><span>TUV</span></div>
+                <div class="button" onclick="appendNumber('9')"><span>9</span><span>WXYZ</span></div>
+                <div class="button" onclick="appendNumber('*')"><span>*</span><span></span></div>
+                <div class="button" onclick="appendNumber('0')"><span>0</span><span></span></div>
+                <div class="button" onclick="appendNumber('#')"><span>#</span><span></span></div>
+                <div class="call-button" onclick="makeCall()">
+                    <img src="./img/拨打.png" alt="Call Icon" width="25ox" height="25px">
                 </div>
-                <div class="button" onclick="appendNumber('2')">
-                    <span>2</span>
-                    <span>ABC</span>
+                <div class="delete-button" onclick="deleteLast()">
+                    <img src="./img/删除-叉.png" alt="Delete Icon">
                 </div>
-                <div class="button" onclick="appendNumber('3')">
-                    <span>3</span>
-                    <span>DEF</span>
-                </div>
-                <div class="button" onclick="appendNumber('4')">
-                    <span>4</span>
-                    <span>GHI</span>
-                </div>
-                <div class="button" onclick="appendNumber('5')">
-                    <span>5</span>
-                    <span>JKL</span>
-                </div>
-                <div class="button" onclick="appendNumber('6')">
-                    <span>6</span>
-                    <span>MNO</span>
-                </div>
-                <div class="button" onclick="appendNumber('7')">
-                    <span>7</span>
-                    <span>PQRS</span>
-                </div>
-                <div class="button" onclick="appendNumber('8')">
-                    <span>8</span>
-                    <span>TUV</span>
-                </div>
-                <div class="button" onclick="appendNumber('9')">
-                    <span>9</span>
-                    <span>WXYZ</span>
-                </div>
-                <div class="button" onclick="appendNumber('*')">
-                    <span>*</span>
-                </div>
-                <div class="button" onclick="appendNumber('0')">
-                    <span>0</span>
-                    <span>+</span>
-                </div>
-                <div class="button" onclick="appendNumber('#')">
-                    <span>#</span>
-                </div>
-            </div>
-            <div class="call-button" onclick="makeCall()">
-                &#x260E;
             </div>
         </div>
         <div id="contacts" class="page">
             <div class="contact-container">
-                <h2>新建联系人</h2>
-                <img src="./img/联系人 (1).png" alt="User Avatar" class="avatar">
-                <form id="contact-form" class="contact-form">
-                    <input type="text" id="name" placeholder="姓名" required>
-                    <input type="text" id="phone" placeholder="号码" required>
-                    <input type="email" id="email" placeholder="邮件">
-                    <input type="text" id="group" placeholder="群组">
-                    <button type="button" class="save-btn" onclick="addContact()">保存</button>
+                <form class="contact-form">
+                    <img src="./img/联系人 (1).png" alt="Avatar" class="avatar">
+                    <input type="text" placeholder="姓名" required>
+                    <input type="tel" placeholder="电话号码" required>
+                    <input type="text" placeholder="邮箱">
+                    <input type="text" placeholder="群组">
+                    <button type="submit" class="save-btn">保存</button>
                 </form>
-                <ul id="contact-list"></ul>
             </div>
         </div>
         <div id="office" class="page">
-            <div class="balance-container">
-                <div class="balance-info">
-                    <p>剩余话费: <span id="remaining-balance">100元</span></p>
-                    <p>语音剩余: <span>60分钟</span></p>
-                    <p>剩余流量: <span id="remaining-data">10GB</span></p>
-                    <p>本月已用流量: <span>2GB</span></p>
+            <div class="office-container">
+                <div class="balance-status">
+                    <p>余额: <span>100.00元</span></p>
+                    <p>流量: <span>500MB</span></p>
                 </div>
-                <div class="balance-actions">
-                    <div class="action" onclick="rechargeBalance()">
-                        <img src="./img/recharge-balance.png" alt="充话费">
-                        <span>充话费</span>
+                <div class="recharge-options">
+                    <div class="recharge-option">
+                        <img src="./img/金钱币.png" alt="Recharge">
+                        <span>话费充值</span>
                     </div>
-                    <div class="action" onclick="rechargeData()">
-                        <img src="./img/recharge-data.png" alt="充流量">
-                        <span>充流量</span>
+                    <div class="recharge-option">
+                        <img src="./img/流量充值-点击.png" alt="Recharge">
+                        <span>流量充值</span></div>
+                </div>
+                <div class="special-offer">
+                    <p>5GB 特别优惠</p>
+                    <img src="./img/优惠.png" alt="Special Offer">
+                </div>
+                <div class="more-services">
+                    <div>
+                        <img src="./img/sim卡.png" alt="Service">
+                        <span>号卡办理</span>
+                        <span class="arrow">></span>
+                    </div>
+                    <div>
+                        <img src="./img/优惠券.png" alt="Service">
+                        <span>优惠权益</span>
+                        <span class="arrow">></span>
                     </div>
                 </div>
             </div>
         </div>
         <div class="footer">
             <div onclick="showPage('dialer')">
-                <img src="./img/dialer.png" alt="拨号">
-                <span>拨号</span>
+                <img src="./img/电话.png" alt="Dialer">
+                <span>通话</span>
             </div>
             <div onclick="showPage('contacts')">
-                <img src="./img/contacts.png" alt="联系人">
+                <img src="./img/联系人.png" alt="Contacts">
                 <span>联系人</span>
             </div>
             <div onclick="showPage('office')">
-                <img src="./img/office.png" alt="办公">
-                <span>办公</span>
+                <img src="./img/营业厅.png" alt="Office">
+                <span>营业厅</span>
             </div>
         </div>
     </div>
-
     <script>
-        // 页面切换逻辑
         function showPage(pageId) {
-            const pages = document.querySelectorAll('.page');
-            pages.forEach(page => {
-                if (page.id === pageId) {
-                    page.classList.add('active');
-                } else {
-                    page.classList.remove('active');
-                }
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active');
             });
+            document.getElementById(pageId).classList.add('active');
         }
 
-        // 添加联系人逻辑
-        function addContact() {
-            const name = document.getElementById('name').value;
-            const phone = document.getElementById('phone').value;
-            const email = document.getElementById('email').value;
-            const group = document.getElementById('group').value;
-
-            const contactList = document.getElementById('contact-list');
-            const li = document.createElement('li');
-            li.textContent = `${name} - ${phone} - ${email} - ${group}`;
-            contactList.appendChild(li);
-
-            // 清空表单
-            document.getElementById('name').value = '';
-            document.getElementById('phone').value = '';
-            document.getElementById('email').value = '';
-            document.getElementById('group').value = '';
-        }
-
-        // 拨打电话逻辑（示例）
-        function makeCall() {
-            const screen = document.getElementById('screen');
-            screen.textContent = '正在拨打...';
-            setTimeout(() => {
-                screen.textContent = '';
-            }, 2000); // 2秒后清空屏幕内容
-        }
-
-        // 输入号码逻辑（示例）
         function appendNumber(number) {
             const screen = document.getElementById('screen');
             screen.textContent += number;
         }
 
-        // 刷新余额逻辑（示例）
-        function reloadBalance() {
-            const remainingBalance = document.getElementById('remaining-balance');
-            const remainingData = document.getElementById('remaining-data');
-            remainingBalance.textContent = '80元';
-            remainingData.textContent = '8GB';
+        function deleteLast() {
+            const screen = document.getElementById('screen');
+            screen.textContent = screen.textContent.slice(0, -1);
+        }
+
+        function makeCall() {
+            const screen = document.getElementById('screen');
+            alert('拨打: ' + screen.textContent);
         }
     </script>
 </body>
+
 </html>
